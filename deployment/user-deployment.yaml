@@ -1,0 +1,42 @@
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user
+spec:
+  selector:
+    matchLabels:
+      run: user
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: user
+    spec:
+      containers:
+        - name: user
+          image: docker.io/ja50n/udagram-api-user:v1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: '64Mi'
+              cpu: '250m'
+            limits:
+              memory: '1024Mi'
+              cpu: '500m'
+
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: user
+  name: user
+spec:
+  ports:
+    - name: '8080'
+      port: 8080
+      targetPort: 8080
+  selector:
+    service: user

@@ -14,17 +14,48 @@ spec:
         run: user
     spec:
       containers:
-        - name: user
-          image: docker.io/ja50n/udagram-api-user:v1
-          ports:
-            - containerPort: 80
-          resources:
-            requests:
-              memory: '64Mi'
-              cpu: '250m'
-            limits:
-              memory: '1024Mi'
-              cpu: '500m'
+      - name: user
+        image: docker.io/ja50n/udagram-api-user:v1
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: '64Mi'
+            cpu: '250m'
+          limits:
+            memory: '1024Mi'
+            cpu: '500m'
+        env:
+        - name: URL
+          valueFrom:
+            configMapKeyRef:
+              name: env-secret
+              key: URL
+        - name: jwt_secret
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: jwt_secret
+        - name: postgres_db
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: postgres_db
+        - name: postgres_host
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: postgres_host
+        - name: postgres_password
+          valueFrom:
+            secretKeyRef:
+              name: env-secret
+              key: postgres_password
+        - name: postgres_username
+          valueFrom:
+            secretKeyRef:
+              name: env-secret
+              key: postgres_username
 
 # Service
 apiVersion: v1

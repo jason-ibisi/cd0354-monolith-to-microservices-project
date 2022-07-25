@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: feed
+  name: backend-feed
 spec:
   selector:
     matchLabels:
-      run: feed
+      run: backend-feed
   replicas: 2
   template:
     metadata:
       labels:
-        run: feed
+        run: backend-feed
     spec:
       containers:
-      - name: feed
+      - name: backend-feed
         image: docker.io/ja50n/udagram-api-feed:v1
         ports:
         - containerPort: 80
@@ -86,12 +86,12 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: feed
-  name: feed
+    service: backend-feed
+  name: backend-feed
 spec:
   ports:
-    - name: '8080'
-      port: 8080
-      targetPort: 8080
+  - name: '8080'
+    port: 8080
+    targetPort: 8080
   selector:
-    service: feed
+    service: backend-feed

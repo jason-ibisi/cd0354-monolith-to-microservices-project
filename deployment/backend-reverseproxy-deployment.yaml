@@ -14,19 +14,19 @@ spec:
         run: reverseproxy
     spec:
       containers:
-      - name: reverseproxy
-        image: docker.io/ja50n/reverseproxy:v1
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"
+        - name: reverseproxy
+          image: docker.io/ja50n/reverseproxy:v1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: '64Mi'
+              cpu: '250m'
+            limits:
+              memory: '1024Mi'
+              cpu: '500m'
 
-# Service
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -35,8 +35,8 @@ metadata:
   name: reverseproxy
 spec:
   ports:
-  - name: "8080"
-    port: 8080
-    targetPort: 8080
+    - name: '8080'
+      port: 8080
+      targetPort: 8080
   selector:
     service: reverseproxy

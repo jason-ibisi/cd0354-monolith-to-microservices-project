@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  aws_region: us-east-1
-  aws_bucket: alxudagram
-  aws_profile: default
-  postgres_db: postgres
-  postgres_host: alxudagram-db.ciejxlivr1mu.us-east-1.rds.amazonaws.com
-  url: http://localhost:8100
+  AWS_REGION: us-east-1
+  AWS_BUCKET: arn:aws:s3:::alxudagram
+  AWS_PROFILE: default
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: alxudagram-db.ciejxlivr1mu.us-east-1.rds.amazonaws.com
+  URL: http://localhost:8100
 metadata:
   name: env-config

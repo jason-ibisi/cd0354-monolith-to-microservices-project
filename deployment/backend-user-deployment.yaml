@@ -20,10 +20,10 @@ spec:
         service: backend-user
     spec:
       containers:
-        - image: docker.io/ja50n/udagram-api-user:v2
+        - image: ja50n/udagram-api-user:v2.1
           name: backend-user
           ports:
-            - containerPort: 8082
+            - containerPort: 80
           imagePullPolicy: Always
           resources:
             requests:
@@ -76,6 +76,6 @@ spec:
     - name: '8080'
       port: 8080
       protocol: TCP
-      targetPort: 8082
+      targetPort: 80
   selector:
     service: backend-user

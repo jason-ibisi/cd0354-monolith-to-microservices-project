@@ -23,7 +23,7 @@ spec:
               memory: '64Mi'
               cpu: '250m'
             limits:
-              memory: '1024Mi'
+              memory: '2048Mi'
               cpu: '500m'
           ports:
             - containerPort: 8080
@@ -39,6 +39,7 @@ spec:
   ports:
     - name: '8080'
       port: 8080
+      protocol: TCP
       targetPort: 8080
   selector:
-    service: reverseproxy
+    app: reverseproxy

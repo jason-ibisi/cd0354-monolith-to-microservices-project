@@ -3,9 +3,9 @@ kind: ConfigMap
 data:
   AWS_REGION: us-east-1
   AWS_BUCKET: alxudagram
-  AWS_PROFILE: default
+  AWS_PROFILE: AlxUdagramCLI
   POSTGRES_DB: postgres
-  POSTGRES_HOST: alxudagram-db.ciejxlivr1mu.us-east-1.rds.amazonaws.com
-  URL: http://a5822a17bb172444e97d5ce1265d83a8-882469914.us-east-1.elb.amazonaws.com:8100
+  POSTGRES_HOST: alxudagram-db.cp1x1douio5k.us-east-1.rds.amazonaws.com
+  URL: http://localhost:8100
 metadata:
   name: env-config

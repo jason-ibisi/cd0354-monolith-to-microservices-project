@@ -23,7 +23,7 @@ spec:
         - image: ja50n/udagram-api-feed:v2.1
           name: backend-feed
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           imagePullPolicy: Always
           resources:
             requests:
@@ -99,6 +99,6 @@ spec:
     - name: '8080'
       port: 8080
       protocol: TCP
-      targetPort: 80
+      targetPort: 8080
   selector:
     service: backend-feed

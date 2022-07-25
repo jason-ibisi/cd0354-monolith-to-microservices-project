@@ -6,6 +6,6 @@ data:
   AWS_PROFILE: default
   POSTGRES_DB: postgres
   POSTGRES_HOST: alxudagram-db.ciejxlivr1mu.us-east-1.rds.amazonaws.com
-  URL: ae5ddb53dfd674ea09aeebe6251c740f-381006775.us-east-1.elb.amazonaws.com
+  URL: http://localhost:8100
 metadata:
   name: env-config

@@ -20,7 +20,7 @@ spec:
         service: backend-feed
     spec:
       containers:
-        - image: docker.io/ja50n/udagram-api-feed:v1
+        - image: docker.io/ja50n/udagram-api-feed:v2
           name: backend-feed
           ports:
             - containerPort: 8080

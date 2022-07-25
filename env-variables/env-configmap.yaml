@@ -6,6 +6,6 @@ data:
   AWS_PROFILE: AlxUdagramCLI
   POSTGRES_DB: postgres
   POSTGRES_HOST: alxudagram-db.cp1x1douio5k.us-east-1.rds.amazonaws.com
-  URL: http://localhost:8100
+  URL: http://a80ea78ba0bf843bb82457e4ed860d67-2020251219.us-east-1.elb.amazonaws.com
 metadata:
   name: env-config
